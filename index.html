@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            height: 100%; /* Ensures the html element takes up the full height of the screen */
+        }
+        
+        body {
+            height: 100%; /* Ensures the body element takes up the full height of the screen */
+            margin: 0; /* Removes any margin around the body */
+            background-image: url('https://wallpapercave.com/wp/wp12813019.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+        
+        .container {
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/175/985/284/abstract-3d-digital-art-dark-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            color: white;
+            border: 5px solid red;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .input-group label {
+            margin-right: 8px;
+            width: 70px;
+        }
+        
+        .input-group input {
+            width: 60%;
+            padding: 8px 12px;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+        } 
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        button {
+            background-image: url('https://t4.ftcdn.net/jpg/08/29/20/17/360_F_829201762_xZfTPKtP863MwRoi63QMJcvBp26Ncrb7.jpg');
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 5px;
+            margin-left: 10px;
+            background-size: cover;
+            background-position: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+        
+        label, h2, button {
+            color: rgb(255, 255, 255);
+        }
+        input{
+            color:    rgb(0, 0, 0);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #000000;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+            color: rgb(250, 7, 7); /* Text color for the modal */
+            font-weight: bold;
+            font-size:x-large;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>HTML Form</h2>
+    <form id="myForm">
+        <div class="input-group">
+            <label for="uname"><b>Name:</b></label>
+            <input type="text" placeholder="Enter Name" name="uname" required>
+        </div>
+
+        <div class="input-group">
+            <label for="cmpy"><b>Company:</b></label>
+            <input type="text" placeholder="Enter Company" name="cmpy" required>
+        </div>
+
+        <div class ="input-group">
+            <label for="strt"><b>Street:</b></label>
+            <input type="text" placeholder="Enter Street" name="strt" required>
+        </div>
+
+        <div class="input-group">
+            <label for="cty"><b>City:</b></label>
+            <input type="text" placeholder="Enter City" name="cty" required>
+        </div>
+
+        <div class="input-group">
+            <label for="st"><b>State:</b></label>
+            <input type="text" placeholder="Enter State" name="st" required>
+        </div>
+
+        <div class="input-group">
+            <label for="zp"><b>Zip:</b></label>
+            <input type="text" placeholder="Enter Zip" name="zp" required>
+        </div>
+
+        <div class="input-group">
+            <label for="eml"><b>Email:</b></label>
+            <input type="text" placeholder="Enter Email" name="eml" required>
+        </div>
+
+        <div class="button-container">
+            <button type="button" onclick="clearForm()">Clear the form</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <div id="output"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-output"></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById("myForm").reset(); // Resets the form fields
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none"; // Hide the modal
+    }
+</script>
+
+</body>
+</html>
